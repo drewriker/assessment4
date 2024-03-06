@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="container">
+
+    <main>
+    <form>
+      <header>
+        <h1>Add a goal</h1>
+      </header>
+      <input 
+          type='text'
+          id="goal"
+          placeholder="What's your goal"/>
+      <input 
+          type='text'
+          id="timeline"
+          placeholder='What is your timeline?'/>
+          <select name="goalCategory" id="goal-select">
+            <option value="">--Category--</option>
+            <option value="dog">Personal</option>
+            <option value="cat">Career</option>
+            <option value="hamster">Financial</option>
+          </select>
+      <button class="goal-button">Add Goal</button>
+    </form>
+    <div class="button-container">
+      <button id="complimentButton">Get a compliment</button>
+      <button id="fortuneButton">Get a Fortune</button>
+    </div>
+
+    <section id="goal-container"></section>
+
+    </main>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+    
+  </body>
+</html>
