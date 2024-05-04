@@ -1,6 +1,8 @@
 const complimentBtn = document.getElementById("complimentButton");
 const fortuneBtn = document.getElementById("fortuneButton");
+const motivationBtn = document.getElementById("motivationButton");
 const goalSubmit = document.getElementById("goal-form");
+const randomActBtn = document.getElementById("randomActButton");
 const baseURL = "http://localhost:4000/api/";
 
 const getCompliment = () => {
@@ -12,6 +14,20 @@ const getCompliment = () => {
 
 const getFortune = () => {
 	axios.get(`${baseURL}fortune/`).then((res) => {
+		const data = res.data;
+		alert(data);
+	});
+};
+
+const getMotivation = () => {
+	axios.get(`${baseURL}motivation/`).then((res) => {
+		const data = res.data;
+		alert(data);
+	});
+};
+
+const getRandomAct = () => {
+	axios.get(`${baseURL}random-act/`).then((res) => {
 		const data = res.data;
 		alert(data);
 	});
@@ -40,4 +56,6 @@ function submitHandler(e) {
 
 complimentBtn.addEventListener("click", getCompliment);
 fortuneBtn.addEventListener("click", getFortune);
+motivationBtn.addEventListener("click", getMotivation);
+randomActBtn.addEventListener("click", getRandomAct);
 goalSubmit.addEventListener("submit", submitHandler);

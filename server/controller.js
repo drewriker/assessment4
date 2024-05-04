@@ -32,4 +32,38 @@ module.exports = {
 	postGoal: (req, res) => {
 		res.status(200).send(req.body);
 	},
+	getMotivation: (req, res) => {
+		const motivation = [
+			`"The only way to do great work is to love what you do." - Steve Jobs`,
+			`"Believe you can and you're halfway there." - Theodore Roosevelt`,
+			`"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill`,
+			`"Don't watch the clock; do what it does. Keep going." - Sam Levenson`,
+			`"The road to success and the road to failure are almost exactly the same." - Colin R. Davis`,
+			`"Success is walking from failure to failure with no loss of enthusiasm." - Winston S. Churchill`,
+			`"Hardships often prepare ordinary people for an extraordinary destiny." - C.S. Lewis`,
+		];
+
+		// choose random quote
+		let randomIndex = Math.floor(Math.random() * motivation.length);
+		let randomMotivation = motivation[randomIndex];
+
+		res.status(200).send(randomMotivation);
+	},
+
+	getRandomAct: (req, res) => {
+		const randomActsOfKindness = [
+			"Hold the door open for someone.",
+			"Leave a kind note for a friend or family member.",
+			"Help someone carry their groceries.",
+			"Pay for someone's meal or coffee anonymously.",
+			"Send a thank-you email or message to someone who has helped you recently.",
+			"Offer to walk a neighbor's dog or help with their yard work.",
+		];
+
+		// choose random quote
+		let randomIndex = Math.floor(Math.random() * randomActsOfKindness.length);
+		let randomAct = randomActsOfKindness[randomIndex];
+
+		res.status(200).send(randomAct);
+	},
 };
